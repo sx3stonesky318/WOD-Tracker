@@ -1,0 +1,60 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1138\cocoasubrtf230
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\f0\fs24 \cf0 CREATE  TABLE IF NOT EXISTS `Movement` (\
+  `id` INT(11) NOT NULL AUTO_INCREMENT ,\
+  `Name` VARCHAR(45) NOT NULL ,\
+  `Movement_Type_id` INT(11) NOT NULL ,\
+  PRIMARY KEY (`id`) )\
+ENGINE = InnoDB\
+DEFAULT CHARACTER SET = latin1;\
+\
+CREATE  TABLE IF NOT EXISTS `Movement_Type` (\
+  `id` INT(11) NOT NULL AUTO_INCREMENT ,\
+  `Name` VARCHAR(45) NOT NULL ,\
+  `Weight` INT(11) NOT NULL ,\
+  PRIMARY KEY (`id`) )\
+ENGINE = InnoDB\
+DEFAULT CHARACTER SET = latin1;\
+\
+CREATE  TABLE IF NOT EXISTS `User` (\
+  `id` INT(11) NOT NULL AUTO_INCREMENT ,\
+  `Username` VARCHAR(45) NOT NULL ,\
+  PRIMARY KEY (`id`) )\
+ENGINE = InnoDB\
+DEFAULT CHARACTER SET = latin1;\
+\
+CREATE  TABLE IF NOT EXISTS `WOD` (\
+  `id` INT(11) NOT NULL AUTO_INCREMENT ,\
+  `Name` VARCHAR(45) NOT NULL ,\
+  `WOD_Type_id` INT(11) NOT NULL ,\
+  PRIMARY KEY (`id`) )\
+ENGINE = InnoDB\
+DEFAULT CHARACTER SET = latin1;\
+\
+CREATE  TABLE IF NOT EXISTS `WOD_Movements` (\
+  `id` INT(11) NOT NULL AUTO_INCREMENT ,\
+  `WOD_id` INT(11) NOT NULL ,\
+  `Movement_id` INT(11) NOT NULL ,\
+  `Sequence` INT(11) NOT NULL ,\
+  PRIMARY KEY (`id`) )\
+ENGINE = InnoDB\
+DEFAULT CHARACTER SET = latin1;\
+\
+CREATE  TABLE IF NOT EXISTS `Workout` (\
+  `id` INT(11) NOT NULL AUTO_INCREMENT ,\
+  `User_id` INT(11) NOT NULL ,\
+  `WOD_id` INT(11) NOT NULL ,\
+  PRIMARY KEY (`id`) )\
+ENGINE = InnoDB\
+DEFAULT CHARACTER SET = latin1;\
+\
+CREATE  TABLE IF NOT EXISTS `WOD_Type` (\
+  `id` INT(11) NOT NULL AUTO_INCREMENT ,\
+  `Name` VARCHAR(45) NOT NULL ,\
+  PRIMARY KEY (`id`) )\
+ENGINE = InnoDB\
+DEFAULT CHARACTER SET = latin1;}
